@@ -1,12 +1,18 @@
 package Sortion;
 
+import java.util.Scanner;
+
 /**
  * 类似斐波那契数列的一个算法
  */
 public class fogJump {
     public static void main(String[] args) {
 
-        System.out.println("\n" + jump(3));
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("请输入青蛙跳台阶的阶数：");
+        int n = input.nextInt();
+        System.out.print("总共有" + jump(n) + "种方法");
     }
 
     public static int jump(int n){
@@ -18,5 +24,4 @@ public class fogJump {
             arr[i] = arr[i - 1] + arr[i - 2];
         return arr[n];
     }
-
 }
