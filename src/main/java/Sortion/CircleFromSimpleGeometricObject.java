@@ -1,7 +1,9 @@
+package Sortion;
+
 /**
  * @author peirongzhang
  */
-public class CircleFromSimpleGeometricObject extends SimpleGeometricObject{
+public class CircleFromSimpleGeometricObject extends SimpleGeometricObject {
     private double raidus;
 
     public CircleFromSimpleGeometricObject(String color, boolean filled){

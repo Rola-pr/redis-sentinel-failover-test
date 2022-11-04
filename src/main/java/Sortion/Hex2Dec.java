@@ -1,3 +1,5 @@
+package Sortion;
+
 import java.util.Scanner;
 
 public class Hex2Dec {
