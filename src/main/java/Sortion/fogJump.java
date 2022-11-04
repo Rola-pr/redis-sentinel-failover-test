@@ -34,7 +34,7 @@ public class fogJump {
      */
     public static int jump1(int n){
         if (n == 0 || n == 1) return 1;
-        return jump(n - 1) + jump(n - 2);
+        return jump1(n - 1) + jump1(n - 2);
 
     }
 }
