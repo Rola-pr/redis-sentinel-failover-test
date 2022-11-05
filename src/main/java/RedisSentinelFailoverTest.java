@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RedisSentinelFailoverTest {
     private static Logger logger = LoggerFactory.getLogger(RedisSentinelFailoverTest.class);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Thread thread = new Thread(() -> {
             try {
@@ -27,6 +27,7 @@ public class RedisSentinelFailoverTest {
             }
         });
         thread.start();
+        thread.wait();
 
         
         String masterName = "mymaster";
