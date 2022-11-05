@@ -5,16 +5,30 @@ import redis.clients.jedis.JedisSentinelPool;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-/**JDVD03327080404
+/**
  * @author peirongzhang
+ * @Since 2022.11.1
  */
+
+// TODO: 2022/11/5 创建多个redis服务器，配置主从关系（Sentinel、Cluster） 
 
 public class RedisSentinelFailoverTest {
     private static Logger logger = LoggerFactory.getLogger(RedisSentinelFailoverTest.class);
     public static void main(String[] args) {
 
+        Thread thread = new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        });
+        thread.start();
+
+        
         String masterName = "mymaster";
         Set<String> sentinels = new HashSet<>();
         sentinels.add("127.0.0.1:6379");
