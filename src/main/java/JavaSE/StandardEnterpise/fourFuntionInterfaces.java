@@ -25,7 +25,7 @@ public class fourFuntionInterfaces {
 
 
     /**
-     *判断学生的分数
+     *4_判断学生的分数
      */
     private static final Predicate<Student> STUDENT_PREDICATE = student -> student.score >= 60;
 
